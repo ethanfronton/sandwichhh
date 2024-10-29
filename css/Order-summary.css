@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #dcdcdc;
+  }
+  
+  .payment-form {
+    width: 600px;
+    padding: 30px;
+    background: #fff;
+    
+  }
+  
+  .payment-button, .confirm-button, .card-info input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 9px;
+    border: 5px solid #ccc;
+  }
+  
+  .payment-button {
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .confirm-button {
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .card-info label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .card-exp-cvv {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .small-input {
+    flex: 1;
+  }
+  

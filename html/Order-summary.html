@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/buy.css">
-  <title>Order summary</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire de Paiement</title>
+<link rel="stylesheet" href="../css/Order-summary.css">
 </head>
 <body>
-  
+
+<div class="payment-form">
+  <button class="payment-button">Payer avec Google Pay</button>
+  <button class="payment-button">Payer avec Apple Pay</button>
+  <button class="payment-button">Payer avec PayLib</button>
+
+  <div class="card-info">
+    <label>Payer avec Mastercard</label>
+    <input type="text" placeholder="Numéro de carte">
+    
+    <div class="card-exp-cvv">
+      <input type="text" placeholder="MM/AA" class="small-input">
+      <input type="text" placeholder="CVV" class="small-input">
+    </div>
+
+    <button class="confirm-button">Confirmer</button>
+  </div>
+</div>
+
 </body>
 </html>
