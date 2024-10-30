@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/assembler.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <title>🥪</title>
+  </head>
+  <body>
+    <header>
+      <div class="blanc"></div>
+      <nav class="navbar">
+        <img src="assets/logo.png" class="logo" alt="logo" />
+
+        <ul>
+          <li><a href="#home">home</a></li>
+          <li><a href="#Commander">Commander</a></li>
+          <li>
+            <a href="#">se connecter</a>
+            <img src="assets/user.png" alt="users" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      style="
+        background-color: white;
+        font-family: 'Montserrat';
+        text-align: center;
+        margin: 5rem;
+      "
+    >
+      <h1>Assemblez puis commandez votre sandwich en 2 clics !</h1>
+      <p style="font-weight: 400; margin-top: 1rem">
+        Choisissez les ingrédients que vous voulez, personnalisez votre sandwich
+        comme bon vous semble et regardez votre sandwich prendre vie en temps
+        réel.
+      </p>
+    </div>
+    <div id="sandwich-builder">
+      <div class="menu">
+        <div class="ing-pain">
+          <p class="title">Pains</p>
+          <div
+            data-ingr="pain_complet"
+            class="clickable"
+            style="background-image: url('./assets/pain_complet.jpeg')"
+          ></div>
+          <div
+            data-ingr="pain_avoine"
+            class="clickable"
+            style="background-image: url('./assets/pain_avoine.jpeg')"
+          ></div>
+          <div
+            data-ingr="pain_blanc"
+            class="clickable"
+            style="background-image: url('./assets/pain_blanc.jpeg')"
+          ></div>
+          <div
+            data-ingr="pain_parmesan"
+            class="clickable"
+            style="background-image: url('./assets/pain_parmesan.jpeg')"
+          ></div>
+          <div
+            data-ingr="pain_italien"
+            class="clickable"
+            style="background-image: url('./assets/pain_italien.jpeg')"
+          ></div>
+        </div>
+        <div class="ing-viande">
+          <p class="title">Viande</p>
+          <div
+            data-ingr="steak_hache"
+            class="clickable"
+            onclick="toggleLayer('steak_hache')"
+            style="background-image: url('./assets/steak_hache.jpeg')"
+          ></div>
+          <div
+            data-ingr="boulette_de_viande"
+            class="clickable"
+            onclick="toggleLayer('boulette_de_viande')"
+            style="background-image: url(./assets/boulette_de_viande.jpeg)"
+          ></div>
+          <div
+            data-ingr="poulet"
+            class="clickable"
+            onclick="toggleLayer('poulet')"
+            style="background-image: url('./assets/poulet.jpg')"
+          ></div>
+          <div
+            data-ingr="jambon"
+            class="clickable"
+            onclick="toggleLayer('jambon')"
+            style="background-image: url(./assets/jambon.jpg)"
+          ></div>
+          <div
+            data-ingr="jambon_roti"
+            class="clickable"
+            onclick="toggleLayer('jambon_roti')"
+            style="background-image: url('./assets/jambon_roti.jpg')"
+          ></div>
+          <div
+            data-ingr="jambon_sec"
+            class="clickable"
+            onclick="toggleLayer('jambon_sec')"
+            style="background-image: url('./assets/jambon_sec.jpg')"
+          ></div>
+          <div
+            data-ingr="boulette_de_viande_vegan"
+            class="clickable"
+            onclick="toggleLayer('boulette_de_viande_vegan')"
+            style="
+              background-image: url('./assets/boulette_de_viande_vegan.jpg');
+              position: relative;
+            "
+          >
+            <svg
+              viewBox="0 0 512 512"
+              style="
+                background-color: white;
+                border-radius: 5px;
+                padding: 3px;
+                position: absolute;
+                top: -10%;
+                left: 70%;
+              "
+            >
+              <path
+                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5l88 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0-72 0s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440l0 16c0 13.3 10.7 24 24 24s24-10.7 24-24l0-16c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"
+                fill="green"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="ing-fromage">
+          <p class="title">Fromage</p>
+          <div
+            data-ingr="cheddar"
+            class="clickable"
+            style="background-image: url('./assets/fromage_cheddar.jpg')"
+          ></div>
+          <div
+            data-ingr="mozzarella"
+            class="clickable"
+            style="background-image: url('./assets/mozzarella.jpg')"
+          ></div>
+          <div
+            data-ingr="parmesan"
+            class="clickable"
+            style="background-image: url('./assets/parmesan.jpg')"
+          ></div>
+          <div
+            data-ingr="blanc"
+            class="clickable"
+            style="background-image: url('./assets/blanc.jpg')"
+          ></div>
+        </div>
+        <div class="ing-legumes">
+          <p class="title">Légumes</p>
+          <div
+            data-ingr="salad"
+            class="clickable"
+            style="background-image: url('./assets/salade.jpg')"
+          ></div>
+          <div
+            data-ingr="tomato"
+            class="clickable"
+            style="background-image: url('./assets/tomate.jpg')"
+          ></div>
+          <div
+            data-ingr="olive"
+            class="clickable"
+            style="background-image: url('./assets/olive.jpg')"
+          ></div>
+          <div
+            data-ingr="oignon"
+            class="clickable"
+            style="background-image: url('./assets/oignon.jpg')"
+          ></div>
+          <div
+            data-ingr="cornichon"
+            class="clickable"
+            style="background-image: url('./assets/cornichon.jpg')"
+          ></div>
+          <div
+            data-ingr="concombre"
+            class="clickable"
+            style="background-image: url('./assets/concombre.jpg')"
+          ></div>
+          <div
+            data-ingr="poivron"
+            class="clickable"
+            style="background-image: url('./assets/poivron.png')"
+          ></div>
+        </div>
+        <div class="ing-sauce">
+          <p class="title">Sauces</p>
+          <div
+            data-ingr="ketchup"
+            class="clickable"
+            style="background-image: url('./assets/ketchup.jpg')"
+          ></div>
+          <div
+            data-ingr="barbecue"
+            class="clickable"
+            style="background-image: url('./assets/barbecue.jpeg')"
+          ></div>
+          <div
+            data-ingr="caesar"
+            class="clickable"
+            style="background-image: url('./assets/caesar.jpeg')"
+          ></div>
+          <div
+            data-ingr="chipotle"
+            class="clickable"
+            style="background-image: url('./assets/chipotle_southwest.jpg')"
+          ></div>
+          <div
+            data-ingr="mayonnaise"
+            class="clickable"
+            style="background-image: url('./assets/mayonnaise.jpg')"
+          ></div>
+          <div
+            data-ingr="moutarde"
+            class="clickable"
+            style="background-image: url('./assets/moutarde.jpg')"
+          ></div>
+          <div
+            data-ingr="ranch"
+            class="clickable"
+            style="background-image: url('./assets/ranch.jpeg')"
+          ></div>
+          <div
+            data-ingr="sauce_oignon"
+            class="clickable"
+            style="background-image: url('./assets/sauce_oignon.jpg')"
+          ></div>
+        </div>
+      </div>
+      <div id="preview" style="margin-top: 0.25rem">
+        <div id="preview-top"></div>
+        <div id="preview-bottom"></div>
+        <img
+          alt="Ingrédient Salade"
+          data-ingr="salad"
+          src="./assets/preview_salad.png"
+          style="z-index: 2"
+        />
+        <img
+          alt="Ingrédient Tomate"
+          data-ingr="tomato"
+          src="./assets/preview_tomate.png"
+          style="z-index: 3"
+        />
+        <img
+          alt="Ingrédient Oignon"
+          data-ingr="oignon"
+          src="./assets/preview_oignon.png"
+          style="z-index: 4"
+        />
+        <img
+          alt="Ingrédient Concombre"
+          data-ingr="concombre"
+          src="./assets/preview_concombre.png"
+          style="z-index: 5"
+        />
+        <img
+          alt="Ingrédient Poivron"
+          data-ingr="poivron"
+          src="./assets/preview_poivron.png"
+          style="z-index: 6"
+        />
+        <img
+          alt="Ingrédient Olive"
+          data-ingr="olive"
+          src="./assets/preview_olive.png"
+          style="z-index: 7"
+        />
+        <img
+          alt="Ingrédient Steak haché"
+          data-ingr="steak_hache"
+          src="./assets/preview_steak_hache.png"
+          style="top: -3%; z-index: 2"
+        />
+        <img
+          alt="Ingrédient Poulet"
+          data-ingr="poulet"
+          src="./assets/preview_poulet.png"
+          style="top: -3%; z-index: 4"
+        />
+        <img
+          alt="Ingrédient Boulette de viande"
+          data-ingr="boulette_de_viande"
+          src="./assets/preview_boulette_de_viande.png"
+          style="top: -3%; z-index: 3"
+        />
+        <img
+          alt="Ingrédient Jambon"
+          data-ingr="jambon"
+          src="./assets/preview_jambon.png"
+          style="top: -3%; z-index: 5"
+        />
+        <img
+          alt="Ingrédient Jambon rôti"
+          data-ingr="jambon_roti"
+          src="./assets/preview_jambon_roti.png"
+          style="top: -3%; z-index: 6"
+        />
+        <img
+          alt="Ingrédient Jambon sec"
+          data-ingr="jambon_sec"
+          src="./assets/preview_jambon_sec.png"
+          style="top: -3%; z-index: 7"
+        />
+        <img
+          alt="Ingrédient Boulette de viande végan"
+          data-ingr="boulette_de_viande_vegan"
+          src="./assets/preview_boulette_de_viande_vegan.png"
+          style="top: -3%; z-index: 8"
+        />
+        <img
+          alt="Ingrédient Cheddar"
+          data-ingr="cheddar"
+          src="./assets/preview_cheddar.png"
+          style="top: -3%; z-index: 9"
+        />
+        <img
+          alt="Ingrédient Parmesan"
+          data-ingr="parmesan"
+          src="./assets/preview_parmesan.png"
+          style="top: -3%; z-index: 10"
+        />
+        <img
+          alt="Ingrédient Mozzarella"
+          data-ingr="mozzarella"
+          src="./assets/preview_mozzarella.png"
+          style="top: -3%; z-index: 11"
+        />
+        <img
+          alt="Ingrédient fromage américain"
+          data-ingr="blanc"
+          src="./assets/preview_blanc.png"
+          style="top: -3%; z-index: 12"
+        />
+      </div>
+      <div id="ticket">
+        <div class="ticket-items">
+          <ul>
+            <li><span>0.80</span> Pain Italien</li>
+            <li><span>0.54</span> Steak haché</li>
+            <li><span>0.37</span> Cheddar</li>
+            <li><span>0.76</span> Tomates</li>
+            <li><span>0.12</span> Salade</li>
+            <li><span>0.05</span> Olives</li>
+            <li><span>0.40</span> Sauce Chipotle</li>
+          </ul>
+        </div>
+        <div class="paiement"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-section address">
+        <p>
+          0 rue de où-vous-savez<br />17000 La Rochelle<br />+33 6 12 34 56 78
+        </p>
+      </div>
+
+      <div class="footer-section links">
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">SIRET</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Termes d'utilisation</a></li>
+          <li><a href="#">Chiffres en 2024</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social-media">
+        <a href="#"><img src="assets/twitter-logo-24.png" alt="Twitter" /></a>
+        <a href="#"
+          ><img src="assets/instagram-logo-24.png" alt="Instagram"
+        /></a>
+        <a href="#"
+          ><img src="assets/facebook-circle-logo-24.png" alt="Facebook"
+        /></a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Partenaire du Stade Rochelais depuis plus de 60 ans</p>
+      </div>
+    </footer>
+    <script>
+      const container = document.querySelectorAll(".clickable");
+      container.forEach((menu, index) => {
+        menu.onclick = function () {
+          const layer = document.querySelector(
+            "#preview img[data-ingr=" + menu.getAttribute("data-ingr") + "]"
+          );
+
+          if (!menu.classList.contains("selected") && layer) {
+            menu.classList.add("selected");
+            layer.style.display = "block";
+          } else {
+            menu.classList.remove("selected");
+            layer.style.display = "none";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
