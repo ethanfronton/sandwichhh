@@ -339,7 +339,23 @@
             <li><span>0.40</span> Sauce Chipotle</li>
           </ul>
         </div>
-        <div class="paiement"></div>
+        <div class="payment">
+          <button class="payment-button">Payer avec Google Pay</button>
+          <button class="payment-button">Payer avec Apple Pay</button>
+          <button class="payment-button">Payer avec PayLib</button>
+
+          <div class="card-info">
+            <label>Payer avec Mastercard</label>
+            <input type="text" placeholder="Numéro de carte" />
+
+            <div class="card-exp-cvv">
+              <input type="text" placeholder="MM/AA" class="small-input" />
+              <input type="text" placeholder="CVV" class="small-input" />
+            </div>
+
+            <button class="confirm-button">Confirmer</button>
+          </div>
+        </div>
       </div>
     </div>
     <footer class="footer">

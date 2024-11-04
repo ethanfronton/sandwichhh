@@ -1,52 +1,47 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
 }
 
-/* Barre de navigation */
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #2abd67; /* Couleur de fond de la barre de navigation */
-    max-width: 100%; /* Prend toute la largeur de la fenêtre */
+    background-color: #2abd67;
+    max-width: 100%;
 }
 
-/* Liste des liens dans la navigation */
 .navbar ul {
     width: 80%;
-    display: flex; /* Utilise un modèle flex pour l'alignement */
-    justify-content: space-around; /* Espace entre les éléments */
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    list-style: none; /* Supprime les puces des listes */    
+    list-style: none; 
 }
 
 
 
 .navbar a {
-    color: #000000; /* Couleur des liens */
-    text-decoration: none; /* Supprime le soulignement des liens */
-    font-weight: bold; /* Rend le texte des liens en gras */
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .navbar a:hover {
-    color: #00ff6e74; /* Change la couleur des liens au survol */
+    color: #00ff6e74;
 }
 
 
 .logo{
     
-    width: 85px; /* Largeur du cercle */
-    height: 85px; /* Hauteur égale à la largeur pour créer un cercle */
-    background-color: white; /* Couleur de fond blanc */
-    border-radius: 0% 60% 60% 0% ;    /* Arrondit les coins à 50% pour obtenir un cercle */
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    border-radius: 0% 60% 60% 0% ;
     padding: 0 16px;
 }
 
-
-/* Style de base du footer */
 .footer {
-    background-color: #d3d3d3; /* Couleur de fond similaire */
+    background-color: #d3d3d3;
     padding: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
@@ -55,7 +50,6 @@
     
 }
 
-/* Section pour l'adresse */
 .address p {
     line-height: 2;
 }
@@ -84,7 +78,6 @@
     text-decoration: underline;
 }
 
-/* Section pour les icônes de réseaux sociaux */
 .social-media {
     display: flex;
     flex-direction: column;
@@ -93,7 +86,7 @@
 }
 
 .social-media img {
-    width: 24px; /* Taille des icônes des réseaux sociaux */
+    width: 24px;
     height: 24px;
 }
 
@@ -109,10 +102,9 @@
     margin-right: 68em;
 }
 
-/* Adaptations pour les écrans de taille moyenne (tablettes) */
 @media screen and (max-width: 768px){
     .footer {
-        background-color: #d3d3d3; /* Couleur de fond similaire */
+        background-color: #d3d3d3;
         padding: 2rem;
         font-family: Arial, Helvetica, sans-serif;
         color: #333;
@@ -123,10 +115,9 @@
     }
 }
 
-/* Adaptations pour les petits écrans (téléphones) */
 @media screen and (max-width: 500px){
     .footer {
-        background-color: #d3d3d3; /* Couleur de fond similaire */
+        background-color: #d3d3d3;
         padding: 1em;
         font-family: Arial, sans-serif;
         color: #333;
@@ -136,14 +127,11 @@
     .footer-bottom p{
         margin-right: 1em;
     }
-
-    
 }
 
-/* Adaptations pour les petits écrans (pc) */
 @media screen and (min-width: 768px){
     .footer {
-        background-color: #d3d3d3; /* Couleur de fond similaire */
+        background-color: #d3d3d3;
         padding: 1em;
         font-family: Arial, Helvetica, sans-serif;
         color: #333;
