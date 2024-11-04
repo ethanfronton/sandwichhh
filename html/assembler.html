@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/assembler.css" />
-    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="./assembler.css" />
+    <link rel="stylesheet" href="./nav.css" />
     <title>🥪</title>
   </head>
   <body>
+    <audio loop id="backgroundMusic">
+      <source src="./assets/sound/bg.mp3" type="audio/mpeg" />
+    </audio>
     <header>
       <div class="blanc"></div>
       <nav class="navbar">
@@ -23,14 +26,7 @@
         </ul>
       </nav>
     </header>
-    <div
-      style="
-        background-color: white;
-        font-family: 'Montserrat';
-        text-align: center;
-        margin: 5rem;
-      "
-    >
+    <div class="assembler-desc">
       <h1>Assemblez puis commandez votre sandwich en 2 clics !</h1>
       <p style="font-weight: 400; margin-top: 1rem">
         Choisissez les ingrédients que vous voulez, personnalisez votre sandwich
@@ -45,27 +41,27 @@
           <div
             data-ingr="pain_complet"
             class="clickable"
-            style="background-image: url('./assets/pain_complet.jpeg')"
+            style="background-image: url('./assets/images/pain_complet.jpeg')"
           ></div>
           <div
             data-ingr="pain_avoine"
             class="clickable"
-            style="background-image: url('./assets/pain_avoine.jpeg')"
+            style="background-image: url('./assets/images/pain_avoine.jpeg')"
           ></div>
           <div
             data-ingr="pain_blanc"
             class="clickable"
-            style="background-image: url('./assets/pain_blanc.jpeg')"
+            style="background-image: url('./assets/images/pain_blanc.jpeg')"
           ></div>
           <div
             data-ingr="pain_parmesan"
             class="clickable"
-            style="background-image: url('./assets/pain_parmesan.jpeg')"
+            style="background-image: url('./assets/images/pain_parmesan.jpeg')"
           ></div>
           <div
             data-ingr="pain_italien"
             class="clickable"
-            style="background-image: url('./assets/pain_italien.jpeg')"
+            style="background-image: url('./assets/images/pain_italien.jpeg')"
           ></div>
         </div>
         <div class="ing-viande">
@@ -74,86 +70,71 @@
             data-ingr="steak_hache"
             class="clickable"
             onclick="toggleLayer('steak_hache')"
-            style="background-image: url('./assets/steak_hache.jpeg')"
+            style="background-image: url('./assets/images/steak_hache.jpeg')"
           ></div>
           <div
             data-ingr="boulette_de_viande"
             class="clickable"
             onclick="toggleLayer('boulette_de_viande')"
-            style="background-image: url(./assets/boulette_de_viande.jpeg)"
+            style="
+              background-image: url(./assets/images/boulette_de_viande.jpeg);
+            "
           ></div>
           <div
             data-ingr="poulet"
             class="clickable"
             onclick="toggleLayer('poulet')"
-            style="background-image: url('./assets/poulet.jpg')"
+            style="background-image: url('./assets/images/poulet.jpg')"
           ></div>
           <div
             data-ingr="jambon"
             class="clickable"
             onclick="toggleLayer('jambon')"
-            style="background-image: url(./assets/jambon.jpg)"
+            style="background-image: url(./assets/images/jambon.jpg)"
           ></div>
           <div
             data-ingr="jambon_roti"
             class="clickable"
             onclick="toggleLayer('jambon_roti')"
-            style="background-image: url('./assets/jambon_roti.jpg')"
+            style="background-image: url('./assets/images/jambon_roti.jpg')"
           ></div>
           <div
             data-ingr="jambon_sec"
             class="clickable"
             onclick="toggleLayer('jambon_sec')"
-            style="background-image: url('./assets/jambon_sec.jpg')"
+            style="background-image: url('./assets/images/jambon_sec.jpg')"
           ></div>
           <div
             data-ingr="boulette_de_viande_vegan"
             class="clickable"
             onclick="toggleLayer('boulette_de_viande_vegan')"
             style="
-              background-image: url('./assets/boulette_de_viande_vegan.jpg');
+              background-image: url('./assets/images/boulette_de_viande_vegan.jpg');
               position: relative;
             "
-          >
-            <svg
-              viewBox="0 0 512 512"
-              style="
-                background-color: white;
-                border-radius: 5px;
-                padding: 3px;
-                position: absolute;
-                top: -10%;
-                left: 70%;
-              "
-            >
-              <path
-                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5l88 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0-72 0s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440l0 16c0 13.3 10.7 24 24 24s24-10.7 24-24l0-16c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"
-                fill="green"
-              />
-            </svg>
-          </div>
+          ></div>
         </div>
         <div class="ing-fromage">
           <p class="title">Fromage</p>
           <div
             data-ingr="cheddar"
             class="clickable"
-            style="background-image: url('./assets/fromage_cheddar.jpg')"
+            style="background-image: url('./assets/images/fromage_cheddar.jpg')"
           ></div>
           <div
             data-ingr="mozzarella"
             class="clickable"
-            style="background-image: url('./assets/mozzarella.jpg')"
+            style="background-image: url('./assets/images/mozzarella.jpg')"
           ></div>
           <div
             data-ingr="parmesan"
             class="clickable"
-            style="background-image: url('./assets/parmesan.jpg')"
+            style="background-image: url('./assets/images/parmesan.jpg')"
           ></div>
           <div
             data-ingr="blanc"
             class="clickable"
-            style="background-image: url('./assets/blanc.jpg')"
+            style="background-image: url('./assets/images/blanc.jpg')"
           ></div>
         </div>
         <div class="ing-legumes">
@@ -161,37 +142,37 @@
           <div
             data-ingr="salad"
             class="clickable"
-            style="background-image: url('./assets/salade.jpg')"
+            style="background-image: url('./assets/images/salade.jpg')"
           ></div>
           <div
             data-ingr="tomato"
             class="clickable"
-            style="background-image: url('./assets/tomate.jpg')"
+            style="background-image: url('./assets/images/tomate.jpg')"
           ></div>
           <div
             data-ingr="olive"
             class="clickable"
-            style="background-image: url('./assets/olive.jpg')"
+            style="background-image: url('./assets/images/olive.jpg')"
           ></div>
           <div
             data-ingr="oignon"
             class="clickable"
-            style="background-image: url('./assets/oignon.jpg')"
+            style="background-image: url('./assets/images/oignon.jpg')"
           ></div>
           <div
             data-ingr="cornichon"
             class="clickable"
-            style="background-image: url('./assets/cornichon.jpg')"
+            style="background-image: url('./assets/images/cornichon.jpg')"
           ></div>
           <div
             data-ingr="concombre"
             class="clickable"
-            style="background-image: url('./assets/concombre.jpg')"
+            style="background-image: url('./assets/images/concombre.jpg')"
           ></div>
           <div
             data-ingr="poivron"
             class="clickable"
-            style="background-image: url('./assets/poivron.png')"
+            style="background-image: url('./assets/images/poivron.png')"
           ></div>
         </div>
         <div class="ing-sauce">
@@ -199,148 +180,150 @@
           <div
             data-ingr="ketchup"
             class="clickable"
-            style="background-image: url('./assets/ketchup.jpg')"
+            style="background-image: url('./assets/images/ketchup.jpg')"
           ></div>
           <div
             data-ingr="barbecue"
             class="clickable"
-            style="background-image: url('./assets/barbecue.jpeg')"
+            style="background-image: url('./assets/images/barbecue.jpeg')"
           ></div>
           <div
             data-ingr="caesar"
             class="clickable"
-            style="background-image: url('./assets/caesar.jpeg')"
+            style="background-image: url('./assets/images/caesar.jpeg')"
           ></div>
           <div
             data-ingr="chipotle"
             class="clickable"
-            style="background-image: url('./assets/chipotle_southwest.jpg')"
+            style="
+              background-image: url('./assets/images/chipotle_southwest.jpg');
+            "
           ></div>
           <div
             data-ingr="mayonnaise"
             class="clickable"
-            style="background-image: url('./assets/mayonnaise.jpg')"
+            style="background-image: url('./assets/images/mayonnaise.jpg')"
           ></div>
           <div
             data-ingr="moutarde"
             class="clickable"
-            style="background-image: url('./assets/moutarde.jpg')"
+            style="background-image: url('./assets/images/moutarde.jpg')"
           ></div>
           <div
             data-ingr="ranch"
             class="clickable"
-            style="background-image: url('./assets/ranch.jpeg')"
+            style="background-image: url('./assets/images/ranch.jpeg')"
           ></div>
           <div
             data-ingr="sauce_oignon"
             class="clickable"
-            style="background-image: url('./assets/sauce_oignon.jpg')"
+            style="background-image: url('./assets/images/sauce_oignon.jpg')"
           ></div>
         </div>
       </div>
-      <div id="preview" style="margin-top: 0.25rem">
+      <div id="preview">
         <div id="preview-top"></div>
         <div id="preview-bottom"></div>
         <img
           alt="Ingrédient Salade"
           data-ingr="salad"
-          src="./assets/preview_salad.png"
+          src="./assets/images/preview_salad.png"
           style="z-index: 2"
         />
         <img
           alt="Ingrédient Tomate"
           data-ingr="tomato"
-          src="./assets/preview_tomate.png"
+          src="./assets/images/preview_tomate.png"
           style="z-index: 3"
         />
         <img
           alt="Ingrédient Oignon"
           data-ingr="oignon"
-          src="./assets/preview_oignon.png"
+          src="./assets/images/preview_oignon.png"
           style="z-index: 4"
         />
         <img
           alt="Ingrédient Concombre"
           data-ingr="concombre"
-          src="./assets/preview_concombre.png"
+          src="./assets/images/preview_concombre.png"
           style="z-index: 5"
         />
         <img
           alt="Ingrédient Poivron"
           data-ingr="poivron"
-          src="./assets/preview_poivron.png"
+          src="./assets/images/preview_poivron.png"
           style="z-index: 6"
         />
         <img
           alt="Ingrédient Olive"
           data-ingr="olive"
-          src="./assets/preview_olive.png"
+          src="./assets/images/preview_olive.png"
           style="z-index: 7"
         />
         <img
           alt="Ingrédient Steak haché"
           data-ingr="steak_hache"
-          src="./assets/preview_steak_hache.png"
+          src="./assets/images/preview_steak_hache.png"
           style="top: -3%; z-index: 2"
         />
         <img
           alt="Ingrédient Poulet"
           data-ingr="poulet"
-          src="./assets/preview_poulet.png"
+          src="./assets/images/preview_poulet.png"
           style="top: -3%; z-index: 4"
         />
         <img
           alt="Ingrédient Boulette de viande"
           data-ingr="boulette_de_viande"
-          src="./assets/preview_boulette_de_viande.png"
+          src="./assets/images/preview_boulette_de_viande.png"
           style="top: -3%; z-index: 3"
         />
         <img
           alt="Ingrédient Jambon"
           data-ingr="jambon"
-          src="./assets/preview_jambon.png"
+          src="./assets/images/preview_jambon.png"
           style="top: -3%; z-index: 5"
         />
         <img
           alt="Ingrédient Jambon rôti"
           data-ingr="jambon_roti"
-          src="./assets/preview_jambon_roti.png"
+          src="./assets/images/preview_jambon_roti.png"
           style="top: -3%; z-index: 6"
         />
         <img
           alt="Ingrédient Jambon sec"
           data-ingr="jambon_sec"
-          src="./assets/preview_jambon_sec.png"
+          src="./assets/images/preview_jambon_sec.png"
           style="top: -3%; z-index: 7"
         />
         <img
           alt="Ingrédient Boulette de viande végan"
           data-ingr="boulette_de_viande_vegan"
-          src="./assets/preview_boulette_de_viande_vegan.png"
+          src="./assets/images/preview_boulette_de_viande_vegan.png"
           style="top: -3%; z-index: 8"
         />
         <img
           alt="Ingrédient Cheddar"
           data-ingr="cheddar"
-          src="./assets/preview_cheddar.png"
+          src="./assets/images/preview_cheddar.png"
           style="top: -3%; z-index: 9"
         />
         <img
           alt="Ingrédient Parmesan"
           data-ingr="parmesan"
-          src="./assets/preview_parmesan.png"
+          src="./assets/images/preview_parmesan.png"
           style="top: -3%; z-index: 10"
         />
         <img
           alt="Ingrédient Mozzarella"
           data-ingr="mozzarella"
-          src="./assets/preview_mozzarella.png"
+          src="./assets/images/preview_mozzarella.png"
           style="top: -3%; z-index: 11"
         />
         <img
           alt="Ingrédient fromage américain"
           data-ingr="blanc"
-          src="./assets/preview_blanc.png"
+          src="./assets/images/preview_blanc.png"
           style="top: -3%; z-index: 12"
         />
       </div>
@@ -411,6 +394,15 @@
             layer.style.display = "none";
           }
         };
+      });
+    </script>
+    <script>
+      const bgMusic = document.getElementById("backgroundMusic");
+
+      document.addEventListener("mouseover", function PlayAudio() {
+        bgMusic.volume = 0.05;
+        bgMusic.play();
+        document.removeEventListener("mouseover", PlayAudio);
       });
     </script>
   </body>
