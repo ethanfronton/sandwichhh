@@ -6,8 +6,16 @@
   overflow-x: hidden;
 }
 
+.assembler-desc {
+  background-color: white;
+  font-family: "Montserrat";
+  text-align: center;
+  margin: 5rem;
+}
+
 #sandwich-builder {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
 }
@@ -20,6 +28,7 @@ p {
 .menu {
   background-color: #2abd67;
   width: 50%;
+  box-sizing: border-box;
 }
 
 .menu div > p {
@@ -70,6 +79,7 @@ p {
   width: 50%;
   margin: 0 1rem 0;
   position: relative;
+  box-sizing: border-box;
 }
 
 #preview img {
@@ -92,18 +102,6 @@ p {
 #preview-bottom {
   margin-top: 1rem;
   transform: scale(-100%);
-}
-
-@media only screen and (max-width: 960px) {
-  #sandwich-builder {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .menu,
-  #preview {
-    width: 100%;
-    margin: 0 0 1rem;
-  }
 }
 
 #ticket {
@@ -136,4 +134,28 @@ p {
 
 .ticket-items li {
   padding: 10px 0 10px;
+}
+
+@media only screen and (max-width: 960px) {
+  #sandwich-builder {
+    flex-direction: column;
+  }
+  .menu,
+  #preview {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  .ticket-items {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .menu,
+  #preview {
+    width: 50%;
+  }
+  #preview {
+    margin: 0;
+  }
 }
