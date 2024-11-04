@@ -1,59 +1,79 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #dcdcdc;
-  }
-  
-  .payment-form {
-    width: 600px;
-    padding: 30px;
-    background: #fff;
-    
-  }
-  
-  .payment-button, .confirm-button, .card-info input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 5px solid #ccc;
-  }
-  
-  .payment-button {
-    background-color: #e0e0e0;
-    color: #333;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .confirm-button {
-    background-color: #555;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .card-info label {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-  }
-  
-  .card-exp-cvv {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .small-input {
-    flex: 1;
-  }
-  
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.payment-button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-button:hover {
+  background-color: #005ea6;
+}
+
+.card-info {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.card-info label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-info input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-exp-cvv {
+  display: flex;
+  gap: 10px;
+}
+
+.small-input {
+  width: calc(50% - 5px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+  background-color: #ff0000;
+}
